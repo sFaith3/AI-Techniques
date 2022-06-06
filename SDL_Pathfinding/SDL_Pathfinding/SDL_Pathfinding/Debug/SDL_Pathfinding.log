@@ -1,0 +1,69 @@
+﻿  Agent.cpp
+d:\tecnicas_ia\sdl_pathfinding\src\agent.cpp(208): warning C4018: '<': no coinciden signed/unsigned
+d:\tecnicas_ia\sdl_pathfinding\src\agent.cpp(229): warning C4018: '<': no coinciden signed/unsigned
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\utility(172): warning C4244: 'inicializando': conversión de 'float' a '_Ty1'; posible pérdida de datos
+          with
+          [
+              _Ty1=int
+          ]
+  d:\tecnicas_ia\sdl_pathfinding\src\agent.cpp(197): note: vea la referencia a la creación de instancias de plantilla de función 'std::pair<int,int>::pair<float&,float&,0>(_Other1,_Other2) noexcept' que se está compilando
+          with
+          [
+              _Other1=float &,
+              _Other2=float &
+          ]
+  d:\tecnicas_ia\sdl_pathfinding\src\agent.cpp(197): note: vea la referencia a la creación de instancias de plantilla de función 'std::pair<int,int>::pair<float&,float&,0>(_Other1,_Other2) noexcept' que se está compilando
+          with
+          [
+              _Other1=float &,
+              _Other2=float &
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\utility(173): warning C4244: 'inicializando': conversión de 'float' a '_Ty2'; posible pérdida de datos
+          with
+          [
+              _Ty2=int
+          ]
+  Graph.cpp
+d:\tecnicas_ia\sdl_pathfinding\src\graph.cpp(8): warning C4018: '<': no coinciden signed/unsigned
+d:\tecnicas_ia\sdl_pathfinding\src\graph.cpp(9): warning C4018: '<': no coinciden signed/unsigned
+d:\tecnicas_ia\sdl_pathfinding\src\graph.cpp(20): warning C4018: '<': no coinciden signed/unsigned
+d:\tecnicas_ia\sdl_pathfinding\src\graph.cpp(21): warning C4018: '<': no coinciden signed/unsigned
+d:\tecnicas_ia\sdl_pathfinding\src\graph.cpp(35): warning C4018: '<': no coinciden signed/unsigned
+d:\tecnicas_ia\sdl_pathfinding\src\graph.cpp(41): warning C4018: '<': no coinciden signed/unsigned
+d:\tecnicas_ia\sdl_pathfinding\src\graph.cpp(42): warning C4018: '<': no coinciden signed/unsigned
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\utility(172): warning C4244: 'inicializando': conversión de 'float' a '_Ty1'; posible pérdida de datos
+          with
+          [
+              _Ty1=int
+          ]
+  d:\tecnicas_ia\sdl_pathfinding\src\graph.cpp(37): note: vea la referencia a la creación de instancias de plantilla de función 'std::pair<int,int>::pair<float&,float&,0>(_Other1,_Other2) noexcept' que se está compilando
+          with
+          [
+              _Other1=float &,
+              _Other2=float &
+          ]
+  d:\tecnicas_ia\sdl_pathfinding\src\graph.cpp(37): note: vea la referencia a la creación de instancias de plantilla de función 'std::pair<int,int>::pair<float&,float&,0>(_Other1,_Other2) noexcept' que se está compilando
+          with
+          [
+              _Other1=float &,
+              _Other2=float &
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\utility(173): warning C4244: 'inicializando': conversión de 'float' a '_Ty2'; posible pérdida de datos
+          with
+          [
+              _Ty2=int
+          ]
+  PathFinding.cpp
+d:\tecnicas_ia\sdl_pathfinding\src\pathfinding.cpp(149): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\tecnicas_ia\sdl_pathfinding\src\pathfinding.cpp(194): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\tecnicas_ia\sdl_pathfinding\src\pathfinding.cpp(294): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+  ScenePathFindingA.cpp
+d:\tecnicas_ia\sdl_pathfinding\src\scenepathfindinga.cpp(185): warning C4244: 'argumento': conversión de 'const int' a 'float'; posible pérdida de datos
+  ScenePathFindingEnemies.cpp
+d:\tecnicas_ia\sdl_pathfinding\src\scenepathfindingenemies.cpp(34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\tecnicas_ia\sdl_pathfinding\src\scenepathfindingenemies.cpp(332): warning C4018: '<': no coinciden signed/unsigned
+  ScenePathFindingMouse.cpp
+  SteeringBehavior.cpp
+  main.cpp
+  Generando código...
+  SDL_Pathfinding.vcxproj -> D:\Tecnicas_IA\SDL_Pathfinding\\bin\SDL_Pathfinding.exe
