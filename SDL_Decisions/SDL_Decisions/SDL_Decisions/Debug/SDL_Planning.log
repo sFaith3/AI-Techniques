@@ -1,9 +1,0 @@
-﻿  utils.cpp
-  SteeringBehavior.cpp
-  SDL_SimpleApp.cpp
-  ScenePlanning.cpp
-  main.cpp
-  Agent.cpp
-  Generating Code...
-  SDL_Planning.vcxproj -> C:\Users\lluis\Desktop\SDL_Decisions\SDL_Decisions\\bin\SDL_Decisions.exe
-  SDL_Planning.vcxproj -> C:\Users\lluis\Desktop\SDL_Decisions\SDL_Decisions\\bin\SDL_Decisions.pdb (Partial PDB)
