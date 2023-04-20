@@ -1,5 +1,5 @@
 <p align="center">
-  <img width=% alt="Dynamic A-star pathfinding project cover" src="https://user-images.githubusercontent.com/14791312/233451852-f62c844e-de22-48db-8678-20100acd66ba.png">
+  <img alt="Dynamic A-star pathfinding project cover" src="https://user-images.githubusercontent.com/14791312/233451852-f62c844e-de22-48db-8678-20100acd66ba.png">
 </p>
 
 
@@ -31,6 +31,11 @@ https://user-images.githubusercontent.com/14791312/233453287-67155c3c-0b8a-4e29-
 https://user-images.githubusercontent.com/14791312/233453694-2e3d5444-325b-454a-a17e-4bf3d4292ef1.mp4
 
 - `Finite State Machines` (Function Pointer Style).
+
+<p align="center">
+  <img alt="Decisions 1" src="https://user-images.githubusercontent.com/14791312/233454018-a089ead0-bc45-42df-820c-1e931b613822.JPG">
+</p>
+
 - `Goal Oriented Action Planning` (with A* as the research algorithm):
 	- A soldier has to scout (search for enemies), approach an enemy, aim, shoot, reload, explode bombs and escape.
 	- World status with the following information (all are `true/false`): `Agent_Alive`, `Agent_with_Weapon`, `Weapon_Reloaded`, `Agent_with_Bomb`, `Enemy_Visible`, `Enemy_Aligned`, `Enemy_Nearby`and `Enemy_Alive`.
