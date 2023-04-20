@@ -1,44 +1,56 @@
 <p align="center">
-  <img alt="Dynamic A-star pathfinding project cover" src="https://user-images.githubusercontent.com/14791312/233451852-f62c844e-de22-48db-8678-20100acd66ba.png">
+  <img alt="A Steering Behavior combination" src="https://user-images.githubusercontent.com/14791312/233503776-0bbb1db4-b799-4c3f-9cc7-fc248dab85cb.JPG">
 </p>
 
 
 # AI Techniques
 
-Artificial intelligence techniques made with C/C++ and SDL2 for PC at the university.
+Artificial intelligence techniques, oriented to video games, made with C/C++ and SDL2 for PC at the university. AI is a discipline that tries to make computers capable of performing cognitive tasks that humans and animals are capable of doing.
 
 
 # Projects
 
 ## Steering Behaviors
 
+These are a set of algorithms that allow autonomous agents to navigate their environment in a realistic way. And the basic idea is to use local information to calculate and apply forces (acceleration) on characters to modify their motion. An agent is anything that senses its environment through a set of actuators.
+
 https://user-images.githubusercontent.com/14791312/233453258-7ca16837-0963-4e46-b21a-e418b7803184.mp4
 
-- Basics: `Seek/Flee`, `Arrive`, `Pursue/Evade` and `Wander`.
-- Advanced: `Flocking`.
-- Others and/or combinations: `Path Following`, `Perimeter Avoidance`, `Collision Avoidance`, `Obstacle Avoidance`.
+In the simulations shown you find the implementation of some Steering Behavior in the following order:
+1. Basics: `Seek/Flee`, `Arrive`, `Pursue/Evade` and `Wander`.
+2. Advanced: `Flocking`.
+3. Combination of the above mentioned among others, such as: `Path Following`, `Perimeter Avoidance`, `Collision Avoidance`, `Obstacle Avoidance`, etc.
 
 ## Pathfinding
 
+The goal of pathfinding algorithms is to find a realistic (intelligent) path between two locations in the game world. These techniques are needed for long-term planning instead of waiting until the last moment to discover a path problem, such as a wall (obstacle), when it is too late.
+
 https://user-images.githubusercontent.com/14791312/233453287-67155c3c-0b8a-4e29-8d92-d0fa7f737280.mp4
 
-- `Breadth First Search`, `Dijkstra`, `Greedy Best-First-Search` and `A*`.
-- `A*`: to get a set of N random locations.
-- `Kind of D*`: to get a set of N random locations with enemies to avoid.
+Simulations implemented:
+1. `Breadth First Search` (BFS), `Dijkstra`, `Greedy Best-First-Search` (GBFS) and `A*` pathfinding algorithms for an agent (soldier) to find the optimal path to a random location in the maze.
+2. Application of the `A*` algorithm for an agent to find the optimal path that passes through a set of N random locations within the maze.
+3. A strategy, using a `kind of D*` (dynamic version of A*), that takes into account that there are adversarial agents (enemies) in the game. The agent has to reach a set of N random locations with enemies to avoid.
 
 ## Decisions
 
+Decision making is the ability of an agent to decide what to do in any given moment. The agent processes a set of input information that it uses to decide the action it wants to take. And the input to the decision making process is the knowledge that the agent has and the output is a request for action.
+
 https://user-images.githubusercontent.com/14791312/233453694-2e3d5444-325b-454a-a17e-4bf3d4292ef1.mp4
 
-- `Finite State Machines` (Function Pointer Style).
+Simulations implemented:
+1. `Finite State Machine` with Function Pointer Style following the next behavior:
 
 <p align="center">
   <img alt="Decisions 1" src="https://user-images.githubusercontent.com/14791312/233454018-a089ead0-bc45-42df-820c-1e931b613822.JPG">
 </p>
 
-- `Goal Oriented Action Planning` (with A* as the research algorithm):
-	- A soldier has to scout (search for enemies), approach an enemy, aim, shoot, reload, explode bombs and escape.
-	- World status with the following information (all are `true/false`): `Agent_Alive`, `Agent_with_Weapon`, `Weapon_Reloaded`, `Agent_with_Bomb`, `Enemy_Visible`, `Enemy_Aligned`, `Enemy_Nearby`and `Enemy_Alive`.
+2. `Goal Oriented Action Planning` with A* as the research algorithm:
+
+    > **Note** Not shown in the video because it is only made with logs in the console
+
+    * A soldier has to scout (search for enemies), approach an enemy, aim, shoot, reload, explode bombs, escape, etc.
+    * World status with the following information (all are `true/false`): `Agent_Alive`, `Agent_with_Weapon`, `Weapon_Reloaded`, `Agent_with_Bomb`, `Enemy_Visible`, `Enemy_Aligned`, `Enemy_Nearby`and `Enemy_Alive`.
 
 
 # Getting Started
