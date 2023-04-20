@@ -7,6 +7,20 @@
 
 Artificial intelligence techniques, oriented to video games, made with C/C++ and SDL2 for PC at the university. AI is a discipline that tries to make computers capable of performing cognitive tasks that humans and animals are capable of doing.
 
+## Table of Contents
+
+- [Projects](#projects)
+  - [Steering Behaviors](#steering-behaviors)
+  - [Pathfinding](#pathfinding)
+  - [Decisions](#decisions)
+- [Getting Started](#getting-started)
+  - [Pre-requisites](#pre-requisites)
+- [Installation](#installation)
+  - [Windows](#windows)
+    - [Run the executables](#run-the-executables)
+- [Authors](#authors)
+- [License](#license)
+
 
 # Projects
 
@@ -52,6 +66,12 @@ Simulations implemented:
     * A soldier has to scout (search for enemies), approach an enemy, aim, shoot, reload, explode bombs, escape, etc.
     * World status with the following information (all are `true/false`): `Agent_Alive`, `Agent_with_Weapon`, `Weapon_Reloaded`, `Agent_with_Bomb`, `Enemy_Visible`, `Enemy_Aligned`, `Enemy_Nearby`and `Enemy_Alive`.
 
+<div align="right">
+  
+[ [ ↑ to top ↑ ] ](#ai-techniques)
+  
+</div>
+
 
 # Getting Started
 
@@ -60,6 +80,12 @@ This project has been made with Windows. But you should be able to use it on Lin
 ## Pre-requisites
 
 Before you start, make sure you have an IDE/Compiler such as [Visual Studio](https://visualstudio.microsoft.com/downloads), [Code::Blocks](https://www.codeblocks.org/downloads) or [XCode](https://developer.apple.com/xcode).
+
+<div align="right">
+  
+[ [ ↑ to top ↑ ] ](#ai-techniques)
+  
+</div>
 
 
 # Installation
@@ -84,6 +110,12 @@ Before you start, make sure you have an IDE/Compiler such as [Visual Studio](htt
 1. Paste in "[ProjectName]/x64/Debug" the next files: "res" folder ([ProjectName])
 2. Run the executable in "[ProjectName]/x64/Debug".
 
+<div align="right">
+  
+[ [ ↑ to top ↑ ] ](#ai-techniques)
+  
+</div>
+
 
 # Authors
 
@@ -94,3 +126,9 @@ Before you start, make sure you have an IDE/Compiler such as [Visual Studio](htt
 # License
 
 [MIT License](./LICENSE)
+
+<div align="right">
+  
+[ [ ↑ to top ↑ ] ](#ai-techniques)
+  
+</div>
