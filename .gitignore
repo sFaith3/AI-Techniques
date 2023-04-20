@@ -17,6 +17,9 @@
 *.dylib
 *.dll
 
+# SDL2 Libraries
+[Ll]ibraries
+
 # Fortran module files
 *.mod
 *.smod
