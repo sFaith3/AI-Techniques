@@ -2,7 +2,6 @@
   <img alt="A Steering Behavior combination" src="https://user-images.githubusercontent.com/14791312/233503776-0bbb1db4-b799-4c3f-9cc7-fc248dab85cb.JPG">
 </p>
 
-
 # AI Techniques
 
 Artificial intelligence techniques, oriented to video games, made with C/C++ and SDL2 for PC at the university. AI is a discipline that tries to make computers capable of performing cognitive tasks that humans and animals are capable of doing.
