@@ -2,7 +2,6 @@
   <img alt="A Steering Behavior combination" src="https://user-images.githubusercontent.com/14791312/233503776-0bbb1db4-b799-4c3f-9cc7-fc248dab85cb.JPG">
 </p>
 
-
 # AI Techniques
 
 Artificial intelligence techniques, oriented to video games, made with C/C++ and SDL2 for PC at the university. AI is a discipline that tries to make computers capable of performing cognitive tasks that humans and animals are capable of doing.
@@ -53,15 +52,26 @@ Decision making is the ability of an agent to decide what to do in any given mom
 https://user-images.githubusercontent.com/14791312/233453694-2e3d5444-325b-454a-a17e-4bf3d4292ef1.mp4
 
 Simulations implemented:
-1. `Finite State Machine` with Function Pointer Style following the next behavior:
+1. `Finite State Machine` (FSM) with Function Pointer Style following the next behavior:
 
-<p align="center">
-  <img alt="Decisions 1" src="https://user-images.githubusercontent.com/14791312/233454018-a089ead0-bc45-42df-820c-1e931b613822.JPG">
-</p>
+    <p align="center">
+      <img alt="Decisions FSM" src="https://user-images.githubusercontent.com/14791312/233454018-a089ead0-bc45-42df-820c-1e931b613822.JPG">
+    </p>
 
 2. `Goal Oriented Action Planning` with A* as the research algorithm:
 
-    > **Note** Not shown in the video because it is only made with logs in the console
+    > **Note** Not shown in the previous video
+
+    <details>
+    <summary>Some simulations:</summary>
+
+    <div align="center">
+
+    ![DecisionsGOAP](https://user-images.githubusercontent.com/14791312/233611850-e557bb77-8b1d-4fda-861d-2640882d5494.gif)
+
+    </div>
+
+    </details>
 
     * A soldier has to scout (search for enemies), approach an enemy, aim, shoot, reload, explode bombs, escape, etc.
     * World status with the following information (all are `true/false`): `Agent_Alive`, `Agent_with_Weapon`, `Weapon_Reloaded`, `Agent_with_Bomb`, `Enemy_Visible`, `Enemy_Aligned`, `Enemy_Nearby`and `Enemy_Alive`.
