@@ -10,7 +10,7 @@ PathFinding::~PathFinding()
 {
 }
 
-Path PathFinding::GetPath(Node * start, Node * goal, std::unordered_map<Node*, Node*> cameFrom)
+Path PathFinding::GetPath(Node* start, Node* goal, std::unordered_map<Node*, Node*> cameFrom)
 {
 	Node* current = goal;
 	Vector2D currentPos = Vector2D((float)current->position.first, (float)current->position.second);
@@ -39,7 +39,7 @@ void PathFinding::InitDebug()
 
 Path PathFinding::BFS(Graph * graph, Node * start, Node * goal, bool earlyExit)
 {
-	// inicialitza la frontera amb el node de la posició inicial
+	// Initialize the border with the node at the initial position.
 	std::queue<Node*> frontier;
 	frontier.push(start);
 
@@ -50,7 +50,7 @@ Path PathFinding::BFS(Graph * graph, Node * start, Node * goal, bool earlyExit)
 	Node* current;
 
 	while (!frontier.empty()) {
-		// pren i elimina un node n de la frontera
+		// Take and remove an N node from the border.
 		current = frontier.front();
 		frontier.pop();
 
@@ -58,7 +58,7 @@ Path PathFinding::BFS(Graph * graph, Node * start, Node * goal, bool earlyExit)
 			break;
 		}
 
-		// ampliar la frontera afegint-hi els veïns de n que no s'han visitat encara, indicant els nodes d'on provenen
+		// Extends the border by adding the neightbors of N that have not yet visited, indicating the nodes from which they come.
 		for (auto& next : current->nodesConnection) {
 			itCameFrom = cameFrom.find(next);
 			if (itCameFrom == cameFrom.end()) {
@@ -74,7 +74,7 @@ Path PathFinding::BFS(Graph * graph, Node * start, Node * goal, bool earlyExit)
 
 Path PathFinding::Dijkstra(Graph * graph, Node * start, Node * goal)
 {
-	// inicialitza la frontera amb el node de la posició inicial
+	// Initialize the border with the node at the initial position.
 	std::priority_queue<std::tuple<Node*, int>, std::vector<std::tuple<Node*, int>>, costComparison> frontier;
 
 	std::tuple<Node*, int> currPriorityNode(start, 0);
@@ -97,7 +97,7 @@ Path PathFinding::Dijkstra(Graph * graph, Node * start, Node * goal)
 		current = std::get<0>(currPriorityNode);
 		frontier.pop();
 
-		//early exit
+		// Early exit.
 		if (current == goal)
 			break;
 
@@ -121,7 +121,7 @@ Path PathFinding::Dijkstra(Graph * graph, Node * start, Node * goal)
 
 Path PathFinding::GBFS(Graph * graph, Node * start, Node * goal)
 {
-	// inicialitza la frontera amb el node de la posició inicial
+	// Initialize the border with the node at the initial position.
 	std::priority_queue<std::tuple<Node*, int>, std::vector<std::tuple<Node*, int>>, costComparison> frontier;
 	std::tuple<Node*, int> currPriorityNode(start, 0);
 	frontier.push(currPriorityNode);
@@ -139,7 +139,7 @@ Path PathFinding::GBFS(Graph * graph, Node * start, Node * goal)
 		current = std::get<0>(currPriorityNode);
 		frontier.pop();
 
-		//early exit
+		// Early exit.
 		if (current == goal)
 			break;
 
@@ -160,7 +160,7 @@ Path PathFinding::GBFS(Graph * graph, Node * start, Node * goal)
 
 Path PathFinding::A(Graph * graph, Node * start, Node * goal)
 {
-	// inicialitza la frontera amb el node de la posició inicial
+	// Initialize the border with the node at the initial position.
 	std::priority_queue<std::tuple<Node*, int>, std::vector<std::tuple<Node*, int>>, costComparison> frontier;
 	std::tuple<Node*, int> currPriorityNode(start, 0);
 	frontier.push(currPriorityNode);
@@ -182,7 +182,7 @@ Path PathFinding::A(Graph * graph, Node * start, Node * goal)
 		current = std::get<0>(currPriorityNode);
 		frontier.pop();
 
-		//early exit
+		// Early exit.
 		if (current == goal)
 			break;
 
@@ -203,12 +203,12 @@ Path PathFinding::A(Graph * graph, Node * start, Node * goal)
 	return GetPath(start, goal, cameFrom);
 }
 
-Path PathFinding::Multitarget(Graph * graph, Graph * graphTerrain, const Node * _start)
+Path PathFinding::Multitarget(Graph* graph, Graph* graphTerrain, const Node* _start)
 {
 	combinations.clear();
 	calculatedPaths.clear();
 
-	//Start gets actor node in simplified graph (num conections = numCoins)
+	// Start gets actor node in simplified graph (numConections = numCoins).
 	Node* start = graph->GetNode(_start->position);
 
 	std::cout << "Building Tree..." << std::endl;
@@ -289,7 +289,7 @@ void PathFinding::ExploreTree(treeNode * t)
 	}
 }
 
-float PathFinding::manhattan(Node * goal, Node * n)
+float PathFinding::manhattan(Node* goal, Node* n)
 {
 	return abs(n->position.first - goal->position.first) + abs(n->position.second - goal->position.second);
 }

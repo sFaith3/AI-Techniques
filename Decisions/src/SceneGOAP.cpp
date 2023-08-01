@@ -27,9 +27,8 @@ SceneGOAP::SceneGOAP()
 	cout << endl;
 	std::vector<Node*> path = GoapAstar(startNode, generateGoal());
 
-	
 	 
-	//Print path
+	// Print path.
 	for (int i = 0; i < path.size(); i++) {
 
 		std::cout << i+1 << "- " << path[i]->action.name << std::endl;
@@ -45,8 +44,6 @@ SceneGOAP::SceneGOAP()
 
 	cout << endl;
 	cout << "PRESS 2 TO RESTART" << endl;
-
-
 }
 
 SceneGOAP::~SceneGOAP()
@@ -64,14 +61,11 @@ SceneGOAP::~SceneGOAP()
 
 void SceneGOAP::update(float dtime, SDL_Event *event)
 {
-
-	
 }
 
 void SceneGOAP::draw()
 {
 	drawMaze();
-
 }
 
 const char* SceneGOAP::getTitle()
@@ -202,8 +196,6 @@ Node* SceneGOAP::generateGoal()
 	goal->worldState = tmpWorldVariables;
 
 	return goal;
-
-
 }
 
 condition SceneGOAP::generateRandomCondition()
@@ -223,11 +215,9 @@ condition SceneGOAP::generateRandomCondition()
 std::string SceneGOAP::getTrueFalseString(condition c)
 {
 	string tmp;
-
 	if (c == condition::TRUE) tmp = "TRUE";
 	if (c == condition::FALSE) tmp = "FALSE";
 	if (c == condition::DONTCARE) tmp = "DON'T CARE";
-
 
 	return tmp;
 }
@@ -235,75 +225,59 @@ std::string SceneGOAP::getTrueFalseString(condition c)
 std::vector<Node*> SceneGOAP::getPossibleActions(Node* n)
 {
 	std::vector<Node*> connections;
-	
-	//Recorre todos los nodos
+
+	// It goes through all the nodes.
 	for (int i = 0; i < nodes.size(); i++) {
-		//Compara si la precondicion del nodo que estamos consultando coinicide con el estado del mundo del nodo que le hemos pasado como atributo
-
+		// It compares whether the precondition of the node that we are querying matches the world state of the node we have passed
+		// as an attribute.
 		int counter = nodes[i]->action.preConditions.size();
-
 		if (n != nodes[i]) {
 			for (int j = 0; j < nodes[i]->action.preConditions.size(); j++) {
-
 				if (nodes[i]->action.preConditions[j].second == n->worldState[nodes[i]->action.preConditions[j].first]) {
-
 					counter--;
-					
-
 				}
 			}
 
 			if (counter == 0) {
 				connections.push_back(nodes[i]);
 			}
-
-
 		}
 	}
 
-	//Devuelve todos los nodos que cumplen con sus precondiciones
+	// Return all nodes that meet its preconditions.
 	return connections;
 }
 
-void SceneGOAP::setNewWorldState(Node * n)
+void SceneGOAP::setNewWorldState(Node* n)
 {
-
-
 	n->worldState = n->parent->worldState;
-
 
 	for (int i = 0; i < n->action.effects.size(); i++) {
 		n->worldState[n->action.effects[i].first] = n->action.effects[i].second;
 	}
 }
 
-int SceneGOAP::getHeuristic(Node * curr, Node * goal)
+int SceneGOAP::getHeuristic(Node* curr, Node* goal)
 {
 	int h = 0;
-
 	for (std::pair<std::string, condition> it : goal->worldState) {
-
 		if (it.second != condition::DONTCARE) {
-
 			if (it.second != curr->worldState[it.first]) {
-
 				h++;
 			}
 		}
 	}
 
-
 	return h;
 }
 
-std::vector<Node*> SceneGOAP::getPath(Node * goal)
+std::vector<Node*> SceneGOAP::getPath(Node* goal)
 {
 	std::vector<Node*> path;
-	Node * tmp = goal;
+	Node* tmp = goal;
 
 	while (tmp->parent != nullptr)
 	{
-
 		path.push_back(tmp);
 		tmp = tmp->parent;
 	}
@@ -313,9 +287,8 @@ std::vector<Node*> SceneGOAP::getPath(Node * goal)
 	return path;
 }
 
-std::vector<Node*> SceneGOAP::GoapAstar(Node *start, Node *goal)
+std::vector<Node*> SceneGOAP::GoapAstar(Node* start, Node* goal)
 {
-
 	std::priority_queue<std::tuple<Node*, int>, std::vector<std::tuple<Node*, int>>, costComparison> frontier;
 	std::tuple<Node*, int> currPriorityNode(start, 0);
 	frontier.push(currPriorityNode);
@@ -337,22 +310,15 @@ std::vector<Node*> SceneGOAP::GoapAstar(Node *start, Node *goal)
 		current = std::get<0>(currPriorityNode);
 		frontier.pop();
 
-		//early exit
-	
+		// Early exit.	
 		if (getHeuristic(current, goal) == 0) {
 			return getPath(current);
-		}	
-		
+		}
 
-		
 		std::vector<Node*> neighbours = getPossibleActions(current);
-
-		for (auto& next : neighbours){
-			
+		for (auto& next : neighbours) {
 			newCost = costSoFar[current] + next->g;
 			itCostSoFar = costSoFar.find(next);
-
-			
 
 			if (itCostSoFar == costSoFar.end() || newCost < costSoFar[next]) {
 				next->parent = current;
@@ -363,18 +329,11 @@ std::vector<Node*> SceneGOAP::GoapAstar(Node *start, Node *goal)
 				currPriorityNode = std::make_tuple(next, priority);
 				frontier.push(currPriorityNode);
 				cameFrom[next] = current;
-		
-
-		
-
 			}
 		}
-		
 	}
 
-
-	
-	cout << "No hi ha path possible" << endl;
+	cout << "There is no possible path" << endl;
 	return getPath(goal);
 }
 
@@ -383,28 +342,29 @@ void SceneGOAP::drawMaze()
 	SDL_SetRenderDrawColor(TheApp::Instance()->getRenderer(), 0, 0, 255, 255);
 	SDL_Rect rect;
 	Vector2D coords;
+
 	for (int j = 0; j < num_cell_y; j++)
 	{
 		for (int i = 0; i < num_cell_x; i++)
-		{		
+		{
 			switch (terrain[j][i])
 			{
 			case 0:
 				SDL_SetRenderDrawColor(TheApp::Instance()->getRenderer(), 0, 0, 255, 255);
 				break;
-			case 1: // Do not draw if it is not necessary (bg is already black)
+			case 1: // Do not draw if it is not necessary (bg is already black).
 			default:
 				continue;
 			}
 
-			coords = cell2pix(Vector2D(i,j)) - Vector2D( (float)CELL_SIZE/2, (float)CELL_SIZE/2 );
+			coords = cell2pix(Vector2D(i, j)) - Vector2D((float)CELL_SIZE / 2, (float)CELL_SIZE / 2);
 			rect = { (int)coords.x, (int)coords.y, CELL_SIZE, CELL_SIZE };
 			SDL_RenderFillRect(TheApp::Instance()->getRenderer(), &rect);
-			//Alternative: render a tile texture:
+			// Alternative: render a tile texture
 			//SDL_RenderCopyEx(TheApp::Instance()->getRenderer(), tile_textures[0], .... );
 		}
 	}
-	//Alternative: render a backgroud texture:
+	// Alternative: render a backgroud texture
 	//SDL_RenderCopy(TheApp::Instance()->getRenderer(), background_texture, NULL, NULL );
 }
 
@@ -418,7 +378,8 @@ void SceneGOAP::drawCoin()
 
 void SceneGOAP::initMaze(char* filename)
 {
-	// Initialize the terrain matrix from file (for each cell a zero value indicates it's a wall, positive values indicate terrain cell cost)
+	// Initialize the terrain matrix from file (for each cell a zero value indicates it's a wall, positive values indicate terrain
+	// cell cost).
 	std::ifstream infile(filename);
 	std::string line;
 	while (std::getline(infile, line))

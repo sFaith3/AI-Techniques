@@ -38,11 +38,8 @@ private:
 	float currCdChangeMapCost;
 	bool canCheckChangeMapCost;
 
-	/*
-	un cop calculat el nou camí segons la dist entre els enemics, es deixa un breu temps per a tornar a recalcular,
-	per tal d'evitar, si és possible, un camí més elevat. Tenint en compte el delay, 'cdChangeMapCost' + 'timeToRecalculate'
-	=> temps que triga en tornar-se a calcular.
-	*/
+	// Once the new path has been calculated to be based on the distance between the enemies, a short time is left to
+	// recalculate again, in order to avoid, if possible, a higher path. Considering delay, 'cdChangeMapCost' + 'timeToRecalculate'.
 	const float timeToRecalculate = .5f;
 	float currTimeToRecalculate;
 	bool isRecalculated;
@@ -60,10 +57,8 @@ private:
 
 	bool isValidCell(Vector2D cell);
 
-	/*
-	para no realizar un nuevo pathfinding una vez se ha recalculado al encontrarse con un enemigo
-	cercano sin haber pasado apenas unos segundos
-	*/
+	// In order not to perform a new pathfinding once it has been recalculated when encountering a nearby enemy without having spent
+	// seconds have passed.
 	void UpdateCostMap(float dtime);
 	bool CheckChangeMapCost(float dtime);
 	bool CheckEnemiesNearby();

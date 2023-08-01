@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Vector2D.h" 
 
-struct coorHash //struct para la tabla de hash del unordered_map con key pair
+struct coorHash //struct for the hash table of the unordered_map with key pair
 {
 	std::size_t operator()(const std::pair<int, int> &c) const{
 		return ((std::hash<int>()(c.first) ^ (std::hash<int>()(c.second) << 1)) >> 1);

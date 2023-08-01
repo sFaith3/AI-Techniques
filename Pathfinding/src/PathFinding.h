@@ -31,7 +31,7 @@ struct treeNode {
 	std::vector<treeNode*> connections;
 };
 
-struct nodeHash //struct para la tabla de hash del unordered_map con key pair
+struct nodeHash //struct for the hash table of the unordered_map with key pair
 {
 	std::size_t operator()(const std::pair<Node*, Node*> &c) const {
 		return ((std::hash<Node*>()(c.first) ^ (std::hash<Node*>()(c.second) << 1)) >> 1);

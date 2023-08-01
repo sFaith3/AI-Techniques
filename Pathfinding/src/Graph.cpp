@@ -74,36 +74,36 @@ std::vector<Node*> Graph::GetConnections(std::pair<int, int> _position,bool diag
 	int sizeTerrainY = terrain[0].size();
 
 	if ((y >= 0 && y < sizeTerrainY) && (x >= 0 && x < sizeTerrainX)) {
-		//Arriba
+		//Up
 		if (x - 1 >= 0 && terrain[x - 1][y] != 0) {
 			nodes.push_back(nodesMap[std::pair<int, int>(x - 1, y)]);
 		}
-		//Derecha
+		//Right
 		if (y + 1 < sizeTerrainY && terrain[x][y + 1] != 0) {
 			nodes.push_back(nodesMap[std::pair<int, int>( x,y + 1)]);
 		}
-		//Abajo
+		//Down
 		if (x + 1 < sizeTerrainX && terrain[x + 1][y] != 0) {
 			nodes.push_back(nodesMap[std::pair<int, int>(x + 1, y)]);
 		}
-		//Izquieda
+		//Left
 		if (y - 1 >= 0 && terrain[x][y - 1] != 0) {
 			nodes.push_back(nodesMap[std::pair<int, int>(x, y - 1)]);
 		}
 		if (diagonals) {
-			//Diagonal Sup-Derecha
+			//Diagonal Upper-Right
 			if ((y + 1 < sizeTerrainY && x - 1 >= 0) && terrain[x - 1][y + 1] != 0) {
 				nodes.push_back(nodesMap[std::pair<int, int>(x - 1, y + 1)]);
 			}
-			//Diagonal Inf-Derecha
+			//Diagonal Lower-Right
 			if ((y + 1 < sizeTerrainY && x + 1 < sizeTerrainX) && terrain[x + 1][y + 1] != 0) {
 				nodes.push_back(nodesMap[std::pair<int, int>(x + 1, y + 1)]);
 			}
-			//Diagonal Inf-Izquierda
+			//Diagonal Lower-Left
 			if ((y - 1 >= 0 && x + 1 < sizeTerrainX) && terrain[x + 1][y - 1] != 0) {
 				nodes.push_back(nodesMap[std::pair<int, int>(x + 1, y - 1)]);
 			}
-			//Diagonal Sup-Izquierda
+			//Diagonal Lower-Left
 			if ((y - 1 >= 0 && x - 1 >= 0) && terrain[x - 1][y - 1] != 0) {
 				nodes.push_back(nodesMap[std::pair<int, int>(x - 1, y - 1)]);
 			}
