@@ -4,7 +4,7 @@
 
 # AI Techniques
 
-Artificial intelligence techniques, oriented to video games, made with C/C++ and SDL2 for PC at the university. AI is a discipline that tries to make computers capable of performing cognitive tasks that humans and animals are capable of doing.
+Artificial intelligence techniques, oriented to video games, made with C++ and SDL2 for PC at the university. AI is a discipline that tries to make computers capable of performing cognitive tasks that humans and animals are capable of doing.
 
 ## Table of Contents
 
